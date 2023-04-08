@@ -3,7 +3,7 @@ Feature: Calculator
   Scenario: add two numbers
     Given Two input values, 1 and 2
     When I add the two values
-    Then I expect the result 3
+    Then I expect the result 3.0
 
   Scenario Outline: add two numbers
     Given Two input values, <first> and <second>
@@ -12,13 +12,11 @@ Feature: Calculator
 
     Examples:
       | first | second | result |
-      | 1     | 12     | 13     |
-      | -1    | 6      | 5  	|
-      | 2     | 2      | 4	    |
+      | 1     | 12     | 13.0     |
+      | -1    | 6      | 5.0  	|
+      | 2     | 2      | 4.0	    |
 
-  @tag
-  Feature: SimpleCalc
   Scenario: reverse number
-    Given One input values, 25
+    Given One input values, 4
     When I want to reverse it
-    Then I expect the result 5
+    Then I expect the result 0.25

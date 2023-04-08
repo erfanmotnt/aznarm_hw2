@@ -10,7 +10,7 @@ public class MyStepdefs {
     private Calculator calculator;
     private int value1;
     private int value2;
-    private int result;
+    private float result;
 
     @Before
     public void before() {
@@ -30,9 +30,9 @@ public class MyStepdefs {
         System.out.print(result);
     }
 
-    @Then("^I expect the result (\\d+)$")
-    public void iExpectTheResult(int arg0) {
-        Assert.assertEquals(arg0, result);
+    @Then("^I expect the result (\\d+.\\d+)$")
+    public void iExpectTheResult(float arg0) {
+        Assert.assertEquals(arg0, result, 0);
     }
 
     @Given("^One input values, (\\d+)$")
