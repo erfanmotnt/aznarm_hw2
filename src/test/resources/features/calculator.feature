@@ -27,3 +27,13 @@ Feature: Calculator
     When I want to find square root of it
     Then I expect the result 2.0
 
+  Scenario Outline: reverse lots of number
+    Given Calculate, <opt> <input>
+    When I want to reverse it
+    Then I expect the result <result>
+
+    Examples:
+      | input | opt | result  |
+      | 25     | rev  | 5.0    |
+      | -4    | rev   | -2.0     |
+      | 1     | rev   | 1.0     |

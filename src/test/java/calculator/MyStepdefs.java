@@ -49,4 +49,9 @@ public class MyStepdefs {
     public void iWantToFindSquareRootOfIt() {
         result = calculator.square_root(value1);
     }
+
+    @Given("^Calculate, (\\[a-z]{3}) (\\d+)$")
+    public void calculateOptInput(int arg0) {
+        result = calculator.calculat(String operation, int arg0);
+    }
 }
