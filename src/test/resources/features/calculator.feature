@@ -20,3 +20,10 @@ Feature: Calculator
     Given One input values, 4
     When I want to reverse it
     Then I expect the result 0.25
+
+
+  Scenario: square root of a number
+    Given One input values, 4
+    When I want to find square root of it
+    Then I expect the result 2.0
+

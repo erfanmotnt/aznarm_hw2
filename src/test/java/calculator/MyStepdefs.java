@@ -44,4 +44,9 @@ public class MyStepdefs {
     public void iWantToReverseIt() {
         result = calculator.reverse(value1);
     }
+
+    @When("^I want to find square root of it$")
+    public void iWantToFindSquareRootOfIt() {
+        result = calculator.square_root(value1);
+    }
 }
