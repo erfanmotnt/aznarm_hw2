@@ -33,6 +33,15 @@ public class MyStepdefs {
     @Then("^I expect the result (\\d+)$")
     public void iExpectTheResult(int arg0) {
         Assert.assertEquals(arg0, result);
+    }
 
+    @Given("^One input values, (\\d+)$")
+    public void oneInputValues(int arg0) {
+        value1 = arg0;
+    }
+
+    @When("^I want to reverse it$")
+    public void iWantToReverseIt() {
+        result = calculator.reverse(value1);
     }
 }

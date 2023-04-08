@@ -15,3 +15,10 @@ Feature: Calculator
       | 1     | 12     | 13     |
       | -1    | 6      | 5  	|
       | 2     | 2      | 4	    |
+
+  @tag
+  Feature: SimpleCalc
+  Scenario: reverse number
+    Given One input values, 25
+    When I want to reverse it
+    Then I expect the result 5
