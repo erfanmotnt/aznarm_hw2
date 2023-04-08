@@ -6,6 +6,8 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.Before;
 import org.junit.Assert;
 
+import static java.lang.Float.NaN;
+
 public class MyStepdefs {
     private Calculator calculator;
     private int value1;
@@ -64,5 +66,10 @@ public class MyStepdefs {
     @Then("^I expect the result Infinity$")
     public void iExpectTheResultInfinity() {
         Assert.assertEquals(result, Double.POSITIVE_INFINITY, 0);
+    }
+
+    @Then("^I expect the result NaN$")
+    public void iExpectTheResultNaN() {
+        Assert.assertEquals(result, NaN, 0);
     }
 }

@@ -43,3 +43,19 @@ Feature: Calculator
     When I want to reverse it
     Then I expect the result Infinity
 
+  Scenario Outline: square root of lots of number
+    Given One operation and a number, <opt> <input>
+    When I want to calculate it
+    Then I expect the result <result>
+
+    Examples:
+      | input | opt | result  |
+      | 4     | sqr  | 2.0   |
+      | 9    | sqr   | 3.0     |
+      | 1     | sqr   | 1.0     |
+      | 0    | sqr   | 0.0     |
+
+  Scenario: square root of negative number
+    Given One input values, -4
+    When I want to find square root of it
+    Then I expect the result NaN
