@@ -11,7 +11,7 @@ public class MyStepdefs {
     private int value1;
     private int value2;
     private float result;
-
+    private String operation;
     @Before
     public void before() {
         calculator = new Calculator();
@@ -50,8 +50,14 @@ public class MyStepdefs {
         result = calculator.square_root(value1);
     }
 
-    @Given("^Calculate, (\\[a-z]{3}) (\\d+)$")
-    public void calculateOptInput(int arg0) {
-        result = calculator.calculat(String operation, int arg0);
+    @Given("^One operation and a number, ([a-z]{3}) (-?\\d+)$")
+    public void oneOperationAndANumberOptInput(String operation, int arg0) {
+        value1 = arg0;
+        this.operation = operation;
+    }
+
+    @When("^I want to calculate it$")
+    public void iWantToCalculateIt() {
+        result = calculator.calculat(operation, value1);
     }
 }

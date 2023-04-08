@@ -28,12 +28,12 @@ Feature: Calculator
     Then I expect the result 2.0
 
   Scenario Outline: reverse lots of number
-    Given Calculate, <opt> <input>
-    When I want to reverse it
+    Given One operation and a number, <opt> <input>
+    When I want to calculate it
     Then I expect the result <result>
 
     Examples:
       | input | opt | result  |
-      | 25     | rev  | 5.0    |
-      | -4    | rev   | -2.0     |
-      | 1     | rev   | 1.0     |
+      | 2     | rvs  | 0.5    |
+      | -4    | rvs   | -2.0     |
+      | 1     | rvs   | 1.0     |
