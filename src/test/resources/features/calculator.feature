@@ -59,3 +59,14 @@ Feature: Calculator
     Given One input values, -4
     When I want to find square root of it
     Then I expect the result NaN
+
+  Scenario Outline: square root of lots of number
+    Given One operation and a number, <opt> <input>
+    When I want to calculate it
+    Then I expect the result NaN
+
+    Examples:
+      | input | opt |
+      | 4     | sqrt |
+      | 2    | rev   |
+      | 0     |  add  |

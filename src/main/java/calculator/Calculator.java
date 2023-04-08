@@ -1,5 +1,6 @@
 package calculator;
 
+import static java.lang.Float.NaN;
 import static java.lang.Math.sqrt;
 
 public class Calculator {
@@ -14,7 +15,7 @@ public class Calculator {
     public float square_root(int value) {
         return (float) sqrt(value);
     }
-    public float calculat(String operation, int value) {
+    public float calculate(String operation, int value) {
         if(operation.equals("rvs")) {
            return this.reverse(value);
         }
@@ -22,7 +23,7 @@ public class Calculator {
             return this.square_root(value);
         }
         else {
-            return 0;
+            return NaN;
         }
     }
 }

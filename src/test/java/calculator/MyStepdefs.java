@@ -52,7 +52,7 @@ public class MyStepdefs {
         result = calculator.square_root(value1);
     }
 
-    @Given("^One operation and a number, ([a-z]{3}) (-?\\d+)$")
+    @Given("^One operation and a number, ([a-z]+) (-?\\d+)$")
     public void oneOperationAndANumberOptInput(String operation, int arg0) {
         value1 = arg0;
         this.operation = operation;
@@ -60,7 +60,7 @@ public class MyStepdefs {
 
     @When("^I want to calculate it$")
     public void iWantToCalculateIt() {
-        result = calculator.calculat(operation, value1);
+        result = calculator.calculate(operation, value1);
     }
 
     @Then("^I expect the result Infinity$")
