@@ -35,5 +35,11 @@ Feature: Calculator
     Examples:
       | input | opt | result  |
       | 2     | rvs  | 0.5    |
-      | -4    | rvs   | -2.0     |
+      | -4    | rvs   | -0.25     |
       | 1     | rvs   | 1.0     |
+
+  Scenario: reverse zero
+    Given One input values, 0
+    When I want to reverse it
+    Then I expect the result Infinity
+

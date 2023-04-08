@@ -30,12 +30,12 @@ public class MyStepdefs {
         System.out.print(result);
     }
 
-    @Then("^I expect the result (\\d+.\\d+)$")
+    @Then("^I expect the result (-?\\d+.\\d+)$")
     public void iExpectTheResult(float arg0) {
         Assert.assertEquals(arg0, result, 0);
     }
 
-    @Given("^One input values, (\\d+)$")
+    @Given("^One input values, (-?\\d+)$")
     public void oneInputValues(int arg0) {
         value1 = arg0;
     }
@@ -59,5 +59,10 @@ public class MyStepdefs {
     @When("^I want to calculate it$")
     public void iWantToCalculateIt() {
         result = calculator.calculat(operation, value1);
+    }
+
+    @Then("^I expect the result Infinity$")
+    public void iExpectTheResultInfinity() {
+        Assert.assertEquals(result, Double.POSITIVE_INFINITY, 0);
     }
 }
